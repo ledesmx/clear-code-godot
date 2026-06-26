@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bpqq6ewqmc734"]
+
+[ext_resource type="Texture2D" uid="uid://cavi7rv2loxfh" path="res://icon.svg" id="1_ngiyr"]
+
+[node name="FirstScene" type="Node2D" unique_id=1210388903]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1720031329]
+texture = ExtResource("1_ngiyr")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Sprite2D" unique_id=1112630347]
+modulate = Color(0.4509804, 1, 0.48235294, 1)
+position = Vector2(213, -6)
+texture = ExtResource("1_ngiyr")
