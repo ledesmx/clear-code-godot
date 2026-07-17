@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://doghmovcgeltw" path="res://graphics/map.png" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://dghd7rii024ea" path="res://scenes/player.tscn" id="2_yqjtg"]
-[ext_resource type="PackedScene" uid="uid://bhr7ly2m53y8a" path="res://scenes/new_scene.tscn" id="3_lnu2h"]
+[ext_resource type="PackedScene" uid="uid://1cywkjto722j" path="res://scenes/tree.tscn" id="3_lnu2h"]
 
 [node name="Game" type="Node2D" unique_id=983720838]
 metadata/_edit_vertical_guides_ = [384.0]
@@ -14,5 +14,11 @@ texture = ExtResource("1_uwrxv")
 [node name="Player" parent="." unique_id=896732108 instance=ExtResource("2_yqjtg")]
 position = Vector2(184, 546)
 
-[node name="NewScene" parent="." unique_id=681873959 instance=ExtResource("3_lnu2h")]
-position = Vector2(39, 79)
+[node name="Tree" parent="." unique_id=794261478 instance=ExtResource("3_lnu2h")]
+position = Vector2(279, 602)
+
+[node name="Tree2" parent="." unique_id=1281859921 instance=ExtResource("3_lnu2h")]
+position = Vector2(214, 552)
+
+[node name="Tree3" parent="." unique_id=284085645 instance=ExtResource("3_lnu2h")]
+position = Vector2(52, 530)
