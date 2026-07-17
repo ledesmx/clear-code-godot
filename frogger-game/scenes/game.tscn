@@ -5,13 +5,14 @@
 [ext_resource type="PackedScene" uid="uid://bhr7ly2m53y8a" path="res://scenes/new_scene.tscn" id="3_lnu2h"]
 
 [node name="Game" type="Node2D" unique_id=983720838]
+metadata/_edit_vertical_guides_ = [384.0]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1122658724]
-position = Vector2(189, 73)
+position = Vector2(192, 320)
 texture = ExtResource("1_uwrxv")
 
 [node name="Player" parent="." unique_id=896732108 instance=ExtResource("2_yqjtg")]
-position = Vector2(15, 11)
+position = Vector2(184, 546)
 
 [node name="NewScene" parent="." unique_id=681873959 instance=ExtResource("3_lnu2h")]
-position = Vector2(40, 79)
+position = Vector2(39, 79)

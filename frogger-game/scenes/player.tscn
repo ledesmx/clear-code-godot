@@ -8,3 +8,11 @@ script = ExtResource("1_g2els")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=649453413]
 texture = ExtResource("1_3vyb7")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1240178374]
+zoom = Vector2(4, 4)
+limit_left = 0
+limit_top = 0
+limit_right = 384
+limit_bottom = 640
+position_smoothing_enabled = true
