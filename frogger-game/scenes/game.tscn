@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://dfq2iqhuccltx"]
 
+[ext_resource type="Script" uid="uid://d4bnsp2tcb41t" path="res://scenes/game.gd" id="1_lbhrr"]
 [ext_resource type="Texture2D" uid="uid://doghmovcgeltw" path="res://graphics/map.png" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://dghd7rii024ea" path="res://scenes/player.tscn" id="2_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://1cywkjto722j" path="res://scenes/tree.tscn" id="3_lnu2h"]
@@ -13,7 +14,11 @@ distance = -188.0
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_p57ef"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lbhrr"]
+size = Vector2(381, 20)
+
 [node name="Game" type="Node2D" unique_id=983720838]
+script = ExtResource("1_lbhrr")
 metadata/_edit_vertical_guides_ = [384.0]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1122658724]
@@ -60,3 +65,17 @@ shape = SubResource("WorldBoundaryShape2D_iywne")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/BottomCollision" unique_id=1404999194]
 position = Vector2(0, 641)
 shape = SubResource("WorldBoundaryShape2D_p57ef")
+
+[node name="Timer" type="Timer" parent="." unique_id=283661942]
+wait_time = 4.0
+autostart = true
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1299707840]
+position = Vector2(11, 14)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=314610121]
+position = Vector2(180.5, 0)
+shape = SubResource("RectangleShape2D_lbhrr")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
