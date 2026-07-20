@@ -21,21 +21,9 @@ size = Vector2(381, 20)
 script = ExtResource("1_lbhrr")
 metadata/_edit_vertical_guides_ = [384.0]
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1122658724]
+[node name="MapSprite2D" type="Sprite2D" parent="." unique_id=1122658724]
 position = Vector2(192, 320)
 texture = ExtResource("1_uwrxv")
-
-[node name="Player" parent="." unique_id=896732108 instance=ExtResource("2_yqjtg")]
-position = Vector2(184, 546)
-
-[node name="Tree" parent="." unique_id=794261478 instance=ExtResource("3_lnu2h")]
-position = Vector2(279, 602)
-
-[node name="Tree2" parent="." unique_id=1281859921 instance=ExtResource("3_lnu2h")]
-position = Vector2(214, 552)
-
-[node name="Tree3" parent="." unique_id=284085645 instance=ExtResource("3_lnu2h")]
-position = Vector2(52, 530)
 
 [node name="Borders" type="Node2D" parent="." unique_id=981269074]
 
@@ -66,16 +54,64 @@ shape = SubResource("WorldBoundaryShape2D_iywne")
 position = Vector2(0, 641)
 shape = SubResource("WorldBoundaryShape2D_p57ef")
 
-[node name="Timer" type="Timer" parent="." unique_id=283661942]
-wait_time = 4.0
+[node name="CarTimer" type="Timer" parent="." unique_id=283661942]
+wait_time = 0.3
 autostart = true
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1299707840]
+[node name="FinishArea" type="Area2D" parent="." unique_id=1299707840]
 position = Vector2(11, 14)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=314610121]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FinishArea" unique_id=314610121]
 position = Vector2(180.5, 0)
 shape = SubResource("RectangleShape2D_lbhrr")
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[node name="Objects" type="Node2D" parent="." unique_id=1940927449]
+
+[node name="Player" parent="Objects" unique_id=896732108 instance=ExtResource("2_yqjtg")]
+position = Vector2(184, 546)
+
+[node name="Trees" type="Node2D" parent="Objects" unique_id=1546081171]
+
+[node name="Tree" parent="Objects/Trees" unique_id=794261478 instance=ExtResource("3_lnu2h")]
+position = Vector2(279, 602)
+
+[node name="Tree2" parent="Objects/Trees" unique_id=1281859921 instance=ExtResource("3_lnu2h")]
+position = Vector2(214, 552)
+
+[node name="Tree3" parent="Objects/Trees" unique_id=284085645 instance=ExtResource("3_lnu2h")]
+position = Vector2(52, 530)
+
+[node name="CarStartPositions" type="Node2D" parent="." unique_id=1894523270]
+
+[node name="Marker2D" type="Marker2D" parent="CarStartPositions" unique_id=1611744276]
+position = Vector2(-10, 483)
+
+[node name="Marker2D2" type="Marker2D" parent="CarStartPositions" unique_id=1854692122]
+position = Vector2(-12, 436)
+
+[node name="Marker2D3" type="Marker2D" parent="CarStartPositions" unique_id=624393156]
+position = Vector2(-15, 324)
+
+[node name="Marker2D4" type="Marker2D" parent="CarStartPositions" unique_id=1716556138]
+position = Vector2(-14, 205)
+
+[node name="Marker2D5" type="Marker2D" parent="CarStartPositions" unique_id=1918747151]
+position = Vector2(-14, 224)
+
+[node name="Marker2D6" type="Marker2D" parent="CarStartPositions" unique_id=556349691]
+position = Vector2(400, 457)
+
+[node name="Marker2D7" type="Marker2D" parent="CarStartPositions" unique_id=1290250673]
+position = Vector2(398, 411)
+
+[node name="Marker2D8" type="Marker2D" parent="CarStartPositions" unique_id=152167339]
+position = Vector2(398, 295)
+
+[node name="Marker2D9" type="Marker2D" parent="CarStartPositions" unique_id=713838350]
+position = Vector2(398, 247)
+
+[node name="Marker2D10" type="Marker2D" parent="CarStartPositions" unique_id=1886890135]
+position = Vector2(398, 266)
+
+[connection signal="timeout" from="CarTimer" to="." method="_on_car_timer_timeout"]
+[connection signal="body_entered" from="FinishArea" to="." method="_on_area_2d_body_entered"]
