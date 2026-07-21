@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://bnq6nblxig5qd" path="res://green_car.gd" id="1_t6xdb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t6xdb"]
-size = Vector2(22, 12)
+size = Vector2(22, 11)
 
 [node name="GreenCar" type="Area2D" unique_id=1897072692]
 collision_layer = 4
@@ -15,7 +15,7 @@ script = ExtResource("1_t6xdb")
 texture = ExtResource("1_8xdtc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1584238970]
-position = Vector2(0, 1)
+position = Vector2(0, 1.5)
 shape = SubResource("RectangleShape2D_t6xdb")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1426294293]

@@ -76,19 +76,18 @@ position = Vector2(180.5, 0)
 shape = SubResource("RectangleShape2D_lbhrr")
 
 [node name="Objects" type="Node2D" parent="." unique_id=1940927449]
+y_sort_enabled = true
 
 [node name="Player" parent="Objects" unique_id=896732108 instance=ExtResource("2_yqjtg")]
 position = Vector2(184, 546)
 
-[node name="Trees" type="Node2D" parent="Objects" unique_id=1546081171]
-
-[node name="Tree" parent="Objects/Trees" unique_id=794261478 instance=ExtResource("3_lnu2h")]
+[node name="Tree" parent="Objects" unique_id=794261478 instance=ExtResource("3_lnu2h")]
 position = Vector2(279, 602)
 
-[node name="Tree2" parent="Objects/Trees" unique_id=1281859921 instance=ExtResource("3_lnu2h")]
+[node name="Tree2" parent="Objects" unique_id=1281859921 instance=ExtResource("3_lnu2h")]
 position = Vector2(214, 552)
 
-[node name="Tree3" parent="Objects/Trees" unique_id=284085645 instance=ExtResource("3_lnu2h")]
+[node name="Tree3" parent="Objects" unique_id=284085645 instance=ExtResource("3_lnu2h")]
 position = Vector2(52, 530)
 
 [node name="CarStartPositions" type="Node2D" parent="." unique_id=1894523270]
