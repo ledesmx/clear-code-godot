@@ -28,6 +28,8 @@ texture = ExtResource("1_uwrxv")
 [node name="Borders" type="Node2D" parent="." unique_id=981269074]
 
 [node name="LeftCollision" type="StaticBody2D" parent="Borders" unique_id=2055087974]
+collision_layer = 8
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/LeftCollision" unique_id=735084244]
 position = Vector2(-1, 0)
@@ -35,6 +37,8 @@ rotation = 1.5707964
 shape = SubResource("WorldBoundaryShape2D_lbhrr")
 
 [node name="RightCollision" type="StaticBody2D" parent="Borders" unique_id=1967515293]
+collision_layer = 8
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/RightCollision" unique_id=631518697]
 position = Vector2(197, 32)
@@ -42,6 +46,8 @@ rotation = -1.5707964
 shape = SubResource("WorldBoundaryShape2D_lnu2h")
 
 [node name="TopCollision" type="StaticBody2D" parent="Borders" unique_id=922646377]
+collision_layer = 8
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/TopCollision" unique_id=654649651]
 position = Vector2(46, -1)
@@ -49,6 +55,8 @@ rotation = 3.1415927
 shape = SubResource("WorldBoundaryShape2D_iywne")
 
 [node name="BottomCollision" type="StaticBody2D" parent="Borders" unique_id=206927644]
+collision_layer = 8
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/BottomCollision" unique_id=1404999194]
 position = Vector2(0, 641)
@@ -60,6 +68,8 @@ autostart = true
 
 [node name="FinishArea" type="Area2D" parent="." unique_id=1299707840]
 position = Vector2(11, 14)
+collision_layer = 8
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FinishArea" unique_id=314610121]
 position = Vector2(180.5, 0)
@@ -114,4 +124,4 @@ position = Vector2(398, 247)
 position = Vector2(398, 266)
 
 [connection signal="timeout" from="CarTimer" to="." method="_on_car_timer_timeout"]
-[connection signal="body_entered" from="FinishArea" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="FinishArea" to="." method="_on_finish_area_body_entered"]
