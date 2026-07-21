@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://c5xx61nnjau4h"]
+
+[ext_resource type="Texture2D" uid="uid://y3ndpd5bhsi3" path="res://graphics/objects/tree2.png" id="1_5pvas"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_auw0d"]
+radius = 4.0
+
+[node name="orange_tree" type="StaticBody2D" unique_id=47765805]
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=927379335]
+texture = ExtResource("1_5pvas")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=107282703]
+position = Vector2(0, 11)
+shape = SubResource("CircleShape2D_auw0d")

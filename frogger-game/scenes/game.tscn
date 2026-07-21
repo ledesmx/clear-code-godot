@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://doghmovcgeltw" path="res://graphics/map.png" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://dghd7rii024ea" path="res://scenes/player.tscn" id="2_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://1cywkjto722j" path="res://scenes/tree.tscn" id="3_lnu2h"]
+[ext_resource type="PackedScene" uid="uid://c5xx61nnjau4h" path="res://scenes/orange_tree.tscn" id="5_iywne"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_lbhrr"]
 
@@ -89,6 +90,9 @@ position = Vector2(214, 552)
 
 [node name="Tree3" parent="Objects" unique_id=284085645 instance=ExtResource("3_lnu2h")]
 position = Vector2(52, 530)
+
+[node name="orange_tree" parent="Objects" unique_id=47765805 instance=ExtResource("5_iywne")]
+position = Vector2(166, 577)
 
 [node name="CarStartPositions" type="Node2D" parent="." unique_id=1894523270]
 
