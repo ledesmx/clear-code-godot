@@ -1,6 +1,6 @@
 extends Node2D
 
-var green_car_scene: PackedScene = preload("res://green_car.tscn")
+var green_car_scene: PackedScene = preload("res://scenes/green_car.tscn")
 
 
 func _on_car_timer_timeout() -> void:
@@ -16,5 +16,5 @@ func go_to_title(body):
 	print("Game over. Go to title")
 
 
-func _on_finish_area_body_entered(body: Node2D) -> void:
+func _on_finish_area_body_entered(_body: Node2D) -> void:
 	print("Winner")

@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://ctfx4q645fxo"]
+
+[ext_resource type="Texture2D" uid="uid://b3jchn0artiyt" path="res://graphics/objects/line.png" id="1_pdjlr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ce3t5"]
+size = Vector2(54, 3)
+
+[node name="Line" type="StaticBody2D" unique_id=250766987]
+y_sort_enabled = true
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1430378466]
+texture = ExtResource("1_pdjlr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=924303314]
+position = Vector2(0, 8.5)
+shape = SubResource("RectangleShape2D_ce3t5")

@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://fuix3wqmy0xn"]
+
+[ext_resource type="Texture2D" uid="uid://oqgtp468wc6x" path="res://graphics/objects/sign.png" id="1_m33ne"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ito57"]
+size = Vector2(2, 3)
+
+[node name="TrafficSign" type="Node2D" unique_id=1507956773]
+y_sort_enabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1918903694]
+position = Vector2(0, 17)
+texture = ExtResource("1_m33ne")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1021349020]
+position = Vector2(0, 31)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1316344114]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_ito57")

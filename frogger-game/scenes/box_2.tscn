@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://clbhd4wblyqxw"]
+
+[ext_resource type="Texture2D" uid="uid://cv8cli0ov53f1" path="res://graphics/objects/box2.png" id="1_tj35j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ss2nc"]
+size = Vector2(12, 6)
+
+[node name="Box2" type="StaticBody2D" unique_id=925313890]
+y_sort_enabled = true
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1439083583]
+texture = ExtResource("1_tj35j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=721764464]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_ss2nc")

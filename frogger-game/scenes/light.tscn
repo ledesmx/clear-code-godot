@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bxyqw6oe0m3g1"]
+
+[ext_resource type="Texture2D" uid="uid://b778fphjcav0" path="res://graphics/objects/light.png" id="1_24oxn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2e2gu"]
+size = Vector2(4, 4)
+
+[node name="Light" type="StaticBody2D" unique_id=832465481]
+y_sort_enabled = true
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=407458559]
+texture = ExtResource("1_24oxn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=139881066]
+position = Vector2(0, 12)
+shape = SubResource("RectangleShape2D_2e2gu")

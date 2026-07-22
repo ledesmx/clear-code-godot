@@ -5,6 +5,20 @@
 [ext_resource type="PackedScene" uid="uid://dghd7rii024ea" path="res://scenes/player.tscn" id="2_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://1cywkjto722j" path="res://scenes/tree.tscn" id="3_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://c5xx61nnjau4h" path="res://scenes/orange_tree.tscn" id="5_iywne"]
+[ext_resource type="PackedScene" uid="uid://c7m4ktc1djh3g" path="res://scenes/potted_tree.tscn" id="6_p57ef"]
+[ext_resource type="PackedScene" uid="uid://jfprothvblsn" path="res://scenes/traffic_lights.tscn" id="7_u5sy4"]
+[ext_resource type="PackedScene" uid="uid://fuix3wqmy0xn" path="res://scenes/traffic_sign.tscn" id="8_gee14"]
+[ext_resource type="PackedScene" uid="uid://dxqhah6wqbajo" path="res://scenes/barrier.tscn" id="9_264po"]
+[ext_resource type="PackedScene" uid="uid://bykvavuyy06ke" path="res://scenes/bench.tscn" id="10_1kice"]
+[ext_resource type="PackedScene" uid="uid://bqqefnrhpebwi" path="res://scenes/bin.tscn" id="11_5newe"]
+[ext_resource type="PackedScene" uid="uid://ba5keywqggssa" path="res://scenes/box_1.tscn" id="12_37s47"]
+[ext_resource type="PackedScene" uid="uid://clbhd4wblyqxw" path="res://scenes/box_2.tscn" id="13_bt5mj"]
+[ext_resource type="PackedScene" uid="uid://co7f8u2mfv1w3" path="res://scenes/box_3.tscn" id="14_e1j6l"]
+[ext_resource type="PackedScene" uid="uid://cisnkb6ak644a" path="res://scenes/house_1.tscn" id="15_pl11u"]
+[ext_resource type="PackedScene" uid="uid://yfjgbxjqmgaa" path="res://scenes/house_2.tscn" id="16_bhx41"]
+[ext_resource type="PackedScene" uid="uid://c0a3sfel46yal" path="res://scenes/house_3.tscn" id="17_qnb83"]
+[ext_resource type="PackedScene" uid="uid://bxyqw6oe0m3g1" path="res://scenes/light.tscn" id="18_sww3w"]
+[ext_resource type="PackedScene" uid="uid://ctfx4q645fxo" path="res://scenes/line.tscn" id="19_suyxu"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_lbhrr"]
 
@@ -93,6 +107,48 @@ position = Vector2(52, 530)
 
 [node name="orange_tree" parent="Objects" unique_id=47765805 instance=ExtResource("5_iywne")]
 position = Vector2(166, 577)
+
+[node name="PottedTree" parent="Objects" unique_id=1586537078 instance=ExtResource("6_p57ef")]
+position = Vector2(100, 507)
+
+[node name="TrafficLights" parent="Objects" unique_id=1160466163 instance=ExtResource("7_u5sy4")]
+position = Vector2(231, 390)
+
+[node name="TrafficSign" parent="Objects" unique_id=1224273641 instance=ExtResource("8_gee14")]
+position = Vector2(171, 434)
+
+[node name="Barrier" parent="Objects" unique_id=162135443 instance=ExtResource("9_264po")]
+position = Vector2(92, 406)
+
+[node name="Bench" parent="Objects" unique_id=243269026 instance=ExtResource("10_1kice")]
+position = Vector2(149, 401)
+
+[node name="Bin" parent="Objects" unique_id=1331883971 instance=ExtResource("11_5newe")]
+position = Vector2(85, 449)
+
+[node name="Box1" parent="Objects" unique_id=1167532664 instance=ExtResource("12_37s47")]
+position = Vector2(125, 447)
+
+[node name="Box2" parent="Objects" unique_id=925313890 instance=ExtResource("13_bt5mj")]
+position = Vector2(142, 466)
+
+[node name="Box3" parent="Objects" unique_id=1279915553 instance=ExtResource("14_e1j6l")]
+position = Vector2(153, 487)
+
+[node name="House1" parent="Objects" unique_id=721308688 instance=ExtResource("15_pl11u")]
+position = Vector2(261, 468)
+
+[node name="House2" parent="Objects" unique_id=229799268 instance=ExtResource("16_bhx41")]
+position = Vector2(339, 559)
+
+[node name="House3" parent="Objects" unique_id=1751144183 instance=ExtResource("17_qnb83")]
+position = Vector2(31, 595)
+
+[node name="Light" parent="Objects" unique_id=832465481 instance=ExtResource("18_sww3w")]
+position = Vector2(182, 503)
+
+[node name="Line" parent="Objects" unique_id=250766987 instance=ExtResource("19_suyxu")]
+position = Vector2(215, 607)
 
 [node name="CarStartPositions" type="Node2D" parent="." unique_id=1894523270]
 

@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bqqefnrhpebwi"]
+
+[ext_resource type="Texture2D" uid="uid://beho7qo80tneo" path="res://graphics/objects/bin.png" id="1_yq3hu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_688sc"]
+radius = 4.0
+
+[node name="Bin" type="StaticBody2D" unique_id=1331883971]
+y_sort_enabled = true
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1060509388]
+texture = ExtResource("1_yq3hu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1753804188]
+position = Vector2(0, 2)
+shape = SubResource("CircleShape2D_688sc")
