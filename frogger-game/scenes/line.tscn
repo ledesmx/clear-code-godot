@@ -6,7 +6,6 @@
 size = Vector2(54, 3)
 
 [node name="Line" type="StaticBody2D" unique_id=250766987]
-y_sort_enabled = true
 collision_mask = 0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1430378466]
