@@ -1,6 +1,6 @@
 extends Node2D
 
-var green_car_scene: PackedScene = preload("res://scenes/green_car.tscn")
+var green_car_scene: PackedScene = preload("res://scenes/car.tscn")
 
 
 func _on_car_timer_timeout() -> void:

@@ -1,18 +1,18 @@
 [gd_scene format=3 uid="uid://dgqbl0q1kot3n"]
 
-[ext_resource type="Texture2D" uid="uid://d0dya2slufckd" path="res://graphics/cars/green.png" id="1_8xdtc"]
-[ext_resource type="Script" uid="uid://bnq6nblxig5qd" path="res://scenes/green_car.gd" id="1_t6xdb"]
+[ext_resource type="Script" uid="uid://bnq6nblxig5qd" path="res://scenes/car.gd" id="1_qt2eu"]
+[ext_resource type="Texture2D" uid="uid://d0dya2slufckd" path="res://graphics/cars/green.png" id="2_50v30"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t6xdb"]
 size = Vector2(22, 11)
 
-[node name="GreenCar" type="Area2D" unique_id=1897072692]
+[node name="Car" type="Area2D" unique_id=1897072692]
 collision_layer = 4
 collision_mask = 2
-script = ExtResource("1_t6xdb")
+script = ExtResource("1_qt2eu")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1333846679]
-texture = ExtResource("1_8xdtc")
+texture = ExtResource("2_50v30")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1584238970]
 position = Vector2(0, 1.5)

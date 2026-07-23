@@ -78,7 +78,7 @@ position = Vector2(0, 641)
 shape = SubResource("WorldBoundaryShape2D_p57ef")
 
 [node name="CarTimer" type="Timer" parent="." unique_id=283661942]
-wait_time = 0.3
+wait_time = 0.2
 autostart = true
 
 [node name="FinishArea" type="Area2D" parent="." unique_id=1299707840]
@@ -337,9 +337,6 @@ position = Vector2(398, 411)
 
 [node name="Marker2D8" type="Marker2D" parent="CarStartPositions" unique_id=152167339]
 position = Vector2(398, 295)
-
-[node name="Marker2D9" type="Marker2D" parent="CarStartPositions" unique_id=713838350]
-position = Vector2(398, 247)
 
 [node name="Marker2D10" type="Marker2D" parent="CarStartPositions" unique_id=1886890135]
 position = Vector2(398, 266)
