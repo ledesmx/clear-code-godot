@@ -1,7 +1,9 @@
 extends CharacterBody2D
 
 var direction := Vector2.ZERO
-var speed := 30
+const WALK_SPEED := 30
+const RUN_SPEED := 60
+var speed := WALK_SPEED
 
 func _physics_process(_delta: float) -> void:
 	direction = Input.get_vector("left", "right", "up", "down")
@@ -9,9 +11,9 @@ func _physics_process(_delta: float) -> void:
 	animate()
 	move_and_slide()
 	if Input.is_action_just_pressed("run"):
-		speed *= 2
+		speed = RUN_SPEED
 	if Input.is_action_just_released("run"):
-		speed /= 2
+		speed = WALK_SPEED
 
 func animate():
 	if direction:
