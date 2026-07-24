@@ -8,9 +8,9 @@ func _physics_process(_delta: float) -> void:
 	velocity = direction * speed
 	animate()
 	move_and_slide()
-	if Input.is_action_just_pressed("print_something"):
+	if Input.is_action_just_pressed("run"):
 		speed *= 2
-	if Input.is_action_just_released("print_something"):
+	if Input.is_action_just_released("run"):
 		speed /= 2
 
 func animate():
