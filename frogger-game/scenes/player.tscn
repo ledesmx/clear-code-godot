@@ -146,3 +146,13 @@ shape = SubResource("RectangleShape2D_g2els")
 sprite_frames = SubResource("SpriteFrames_tuyoq")
 animation = &"up"
 autoplay = "down"
+
+[node name="RunTimer" type="Timer" parent="." unique_id=380795906]
+one_shot = true
+
+[node name="RunWaitTimer" type="Timer" parent="." unique_id=328135669]
+wait_time = 3.0
+one_shot = true
+
+[connection signal="timeout" from="RunTimer" to="." method="_on_run_timer_timeout"]
+[connection signal="timeout" from="RunWaitTimer" to="." method="_on_run_wait_timer_timeout"]
