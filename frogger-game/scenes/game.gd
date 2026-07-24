@@ -17,7 +17,7 @@ func go_to_title(_body):
 
 
 func _on_finish_area_body_entered(_body: Node2D) -> void:
-	if score > Global.score:
+	if score < Global.score:
 		Global.score = score
 	call_deferred("change_to_title_scene")
 
