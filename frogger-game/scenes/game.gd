@@ -1,6 +1,7 @@
 extends Node2D
 
 var green_car_scene: PackedScene = preload("res://scenes/car.tscn")
+var score: int = 0
 
 
 func _on_car_timer_timeout() -> void:
@@ -18,3 +19,9 @@ func go_to_title(body):
 
 func _on_finish_area_body_entered(_body: Node2D) -> void:
 	print("Winner")
+
+
+func _on_score_timer_timeout() -> void:
+	score += 1
+	var text_format = "Score: {score} PTS"
+	$CanvasLayer/Score.text = text_format.format({"score": score})

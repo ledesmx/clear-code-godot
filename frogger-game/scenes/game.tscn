@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://c0a3sfel46yal" path="res://scenes/house_3.tscn" id="17_qnb83"]
 [ext_resource type="PackedScene" uid="uid://bxyqw6oe0m3g1" path="res://scenes/light.tscn" id="18_sww3w"]
 [ext_resource type="PackedScene" uid="uid://ctfx4q645fxo" path="res://scenes/line.tscn" id="19_suyxu"]
+[ext_resource type="FontFile" uid="uid://hqpa84d2dqvp" path="res://fonts/Better VCR 9.0.1.ttf" id="20_1kice"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_lbhrr"]
 
@@ -341,5 +342,31 @@ position = Vector2(398, 295)
 [node name="Marker2D10" type="Marker2D" parent="CarStartPositions" unique_id=1886890135]
 position = Vector2(398, 266)
 
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=727902150]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=344680300]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -27.0
+offset_right = 145.0
+grow_vertical = 0
+color = Color(0, 0, 0, 0.5019608)
+
+[node name="Score" type="Label" parent="CanvasLayer" unique_id=469346281]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -23.0
+offset_right = 85.0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("20_1kice")
+text = "Score: 0 PTS"
+
+[node name="ScoreTimer" type="Timer" parent="." unique_id=452591228]
+wait_time = 0.7
+autostart = true
+
 [connection signal="timeout" from="CarTimer" to="." method="_on_car_timer_timeout"]
 [connection signal="body_entered" from="FinishArea" to="." method="_on_finish_area_body_entered"]
+[connection signal="timeout" from="ScoreTimer" to="." method="_on_score_timer_timeout"]
