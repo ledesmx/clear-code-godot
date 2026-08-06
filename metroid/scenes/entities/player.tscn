@@ -6,6 +6,9 @@
 
 [node name="Player" type="CharacterBody2D" unique_id=1179682327]
 script = ExtResource("1_ucweq")
+jump_strength = 300
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=830283116]
 shape = SubResource("CapsuleShape2D_0qees")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1136621832]
