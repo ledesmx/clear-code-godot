@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dhfeynlx4bvji"]
+
+[ext_resource type="Texture2D" uid="uid://nss02ym145bd" path="res://graphics/fire/default.png" id="1_mkf8s"]
+
+[node name="Bullet" type="Node2D" unique_id=1527686720]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1282747958]
+texture = ExtResource("1_mkf8s")
