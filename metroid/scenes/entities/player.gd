@@ -5,9 +5,12 @@ var speed := 100
 @export var jump_strength = 500
 var is_reloading = false
 
+signal shoot(position: Vector2, direction: Vector2)
+
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("shoot") and not is_reloading:
 		print("shoot")
+		shoot.emit(position, Input.get_vector("aim left", "aim right", "aim up", "aim down"))
 		is_reloading = true
 		$ReloadTimer.start()
 
