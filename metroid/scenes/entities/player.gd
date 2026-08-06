@@ -3,6 +3,13 @@ extends CharacterBody2D
 var speed := 100
 @export var gravity = 9.8
 @export var jump_strength = 500
+var is_reloading = false
+
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("shoot") and not is_reloading:
+		print("shoot")
+		is_reloading = true
+		$ReloadTimer.start()
 
 func _physics_process(delta: float) -> void:
 	var direction_x := Input.get_axis("left", "right")
@@ -15,3 +22,13 @@ func _physics_process(delta: float) -> void:
 	velocity.y += gravity
 	move_and_slide()
 	
+
+
+#func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	#if event.is_action("shoot") and not is_reloading:
+		#print("shoot")
+		#is_reloading = true
+
+
+func _on_reload_timer_timeout() -> void:
+	is_reloading = false
