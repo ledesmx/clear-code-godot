@@ -21,6 +21,7 @@ func _process(delta: float) -> void:
 func _physics_process(delta: float) -> void:
 	var direction_x := Input.get_axis("left", "right")
 	velocity.x = direction_x * speed
+	set_current_animation(direction_x)
 	
 	if Input.is_action_just_pressed("jump"):
 		velocity.y -= jump_strength
@@ -39,3 +40,15 @@ func _physics_process(delta: float) -> void:
 
 func _on_reload_timer_timeout() -> void:
 	is_reloading = false
+	
+func set_current_animation(direction_x: float):
+	$LegsSprite2D.flip_h = true if direction_x < 0.0 else false if direction_x > 0.0 else $LegsSprite2D.flip_h
+	
+	match [is_on_floor(), direction_x]:
+		[false, _]:
+			$LegsAnimationPlayer.current_animation = "jump"
+		[true, 0.0]:
+			$LegsAnimationPlayer.current_animation = "idle"
+		[true, _]:
+			$LegsAnimationPlayer.current_animation = "run"
+		
