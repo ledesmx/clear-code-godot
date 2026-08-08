@@ -8,7 +8,7 @@ func _on_player_shoot(player_position: Vector2, direction: Vector2) -> void:
 	print(direction)
 	
 	var bullet = bullet_scene.instantiate() as Node2D
-	bullet.position = player_position
+	bullet.position = player_position + direction * 16
 	bullet.direction = direction
 	add_child(bullet)
 	
