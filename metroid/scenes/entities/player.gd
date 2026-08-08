@@ -11,7 +11,10 @@ signal shoot(position: Vector2, direction: Vector2)
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("shoot") and not is_reloading:
 		print("shoot")
-		shoot.emit(position, Input.get_vector("aim left", "aim right", "aim up", "aim down").normalized())
+		var shoot_direction = Input.get_vector("aim left", "aim right", "aim up", "aim down").normalized()
+		if shoot_direction == Vector2.ZERO:
+			shoot_direction = Vector2.RIGHT
+		shoot.emit(position, shoot_direction)
 		is_reloading = true
 		$ReloadTimer.start()
 
