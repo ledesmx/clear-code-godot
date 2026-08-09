@@ -45,20 +45,20 @@ func set_current_animation(direction_x: float):
 			$LegsAnimationPlayer.current_animation = "run"
 	
 	var shoot_direction = Input.get_vector("aim left", "aim right", "aim up", "aim down").normalized()
-	match [shoot_direction.x, shoot_direction.y]:
-		[var x, _] when x > .75:
+	match [int(round(shoot_direction.x)), int(round(shoot_direction.y))]:
+		[1, 0]:
 			$TorsoSprite2D.frame = 0
-		[var x, var y] when x > .25 and y < -.25:
-			$TorsoSprite2D.frame = 7
-		[var x, var y] when x > .25 and y > .25:
+		[1, 1]:
 			$TorsoSprite2D.frame = 1
-		[_, var y] when y < -.75:
-			$TorsoSprite2D.frame = 6
-		[_, var y] when y > .75:
+		[0, 1]:
 			$TorsoSprite2D.frame = 2
-		[var x, var y] when x > -.75 and y < -.25:
-			$TorsoSprite2D.frame = 5
-		[var x, var y] when x > -.75 and y > .25:
+		[-1, 1]:
 			$TorsoSprite2D.frame = 3
-		[var x, _] when x < -.75:
+		[-1, 0]:
 			$TorsoSprite2D.frame = 4
+		[-1, -1]:
+			$TorsoSprite2D.frame = 5
+		[0, -1]:
+			$TorsoSprite2D.frame = 6
+		[1, -1]:
+			$TorsoSprite2D.frame = 7
