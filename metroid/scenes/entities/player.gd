@@ -29,14 +29,6 @@ func _physics_process(delta: float) -> void:
 	# gravity
 	velocity.y += gravity
 	move_and_slide()
-	
-
-
-#func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	#if event.is_action("shoot") and not is_reloading:
-		#print("shoot")
-		#is_reloading = true
-
 
 func _on_reload_timer_timeout() -> void:
 	is_reloading = false
@@ -51,4 +43,22 @@ func set_current_animation(direction_x: float):
 			$LegsAnimationPlayer.current_animation = "idle"
 		[true, _]:
 			$LegsAnimationPlayer.current_animation = "run"
-		
+	
+	var shoot_direction = Input.get_vector("aim left", "aim right", "aim up", "aim down").normalized()
+	match [shoot_direction.x, shoot_direction.y]:
+		[var x, _] when x > .75:
+			$TorsoSprite2D.frame = 0
+		[var x, var y] when x > .25 and y < -.25:
+			$TorsoSprite2D.frame = 7
+		[var x, var y] when x > .25 and y > .25:
+			$TorsoSprite2D.frame = 1
+		[_, var y] when y < -.75:
+			$TorsoSprite2D.frame = 6
+		[_, var y] when y > .75:
+			$TorsoSprite2D.frame = 2
+		[var x, var y] when x > -.75 and y < -.25:
+			$TorsoSprite2D.frame = 5
+		[var x, var y] when x > -.75 and y > .25:
+			$TorsoSprite2D.frame = 3
+		[var x, _] when x < -.75:
+			$TorsoSprite2D.frame = 4

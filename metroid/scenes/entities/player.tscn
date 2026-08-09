@@ -89,7 +89,7 @@ shape = SubResource("CapsuleShape2D_0qees")
 zoom = Vector2(2, 2)
 
 [node name="ReloadTimer" type="Timer" parent="." unique_id=1797845882]
-wait_time = 0.564
+wait_time = 0.285
 
 [node name="LegsSprite2D" type="Sprite2D" parent="." unique_id=1625245569]
 position = Vector2(-1, -7)
@@ -97,6 +97,12 @@ texture = ExtResource("2_08t41")
 hframes = 8
 vframes = 3
 frame = 9
+
+[node name="TorsoSprite2D" type="Sprite2D" parent="." unique_id=1835375144]
+position = Vector2(-1, -10)
+texture = ExtResource("2_08t41")
+hframes = 8
+vframes = 3
 
 [node name="LegsAnimationPlayer" type="AnimationPlayer" parent="." unique_id=311913520]
 libraries/ = SubResource("AnimationLibrary_5u6hq")
