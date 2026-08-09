@@ -9,6 +9,7 @@ var is_reloading = false
 signal shoot(position: Vector2, direction: Vector2)
 
 func _process(delta: float) -> void:
+	set_crosshair()
 	if Input.is_action_just_pressed("shoot") and not is_reloading:
 		print("shoot")
 		var shoot_direction = Input.get_vector("aim left", "aim right", "aim up", "aim down").normalized()
@@ -17,6 +18,9 @@ func _process(delta: float) -> void:
 		shoot.emit(position, shoot_direction)
 		is_reloading = true
 		$ReloadTimer.start()
+		var tween = get_tree().create_tween()
+		tween.tween_property($CrosshairSprite2D, "scale", Vector2(.2, .2), .1)
+		tween.tween_property($CrosshairSprite2D, "scale", Vector2(.4, .4), .1)
 
 func _physics_process(delta: float) -> void:
 	var direction_x := Input.get_axis("left", "right")
@@ -62,3 +66,7 @@ func set_current_animation(direction_x: float):
 			$TorsoSprite2D.frame = 6
 		[1, -1]:
 			$TorsoSprite2D.frame = 7
+
+func set_crosshair():
+	var shoot_direction = Input.get_vector("aim left", "aim right", "aim up", "aim down").normalized()
+	$CrosshairSprite2D.position = shoot_direction * 50

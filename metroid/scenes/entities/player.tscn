@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c01jp7oecek4l" path="res://scenes/entities/player.gd" id="1_ucweq"]
 [ext_resource type="Texture2D" uid="uid://de5wf7al0hknv" path="res://graphics/characters/player.png" id="2_08t41"]
+[ext_resource type="Texture2D" uid="uid://otyoj5px7yk7" path="res://graphics/ui/crosshair.png" id="3_1ie0h"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0qees"]
 
@@ -107,6 +108,10 @@ vframes = 3
 [node name="LegsAnimationPlayer" type="AnimationPlayer" parent="." unique_id=311913520]
 libraries/ = SubResource("AnimationLibrary_5u6hq")
 autoplay = &"idle"
+
+[node name="CrosshairSprite2D" type="Sprite2D" parent="." unique_id=374818635]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("3_1ie0h")
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="timeout" from="ReloadTimer" to="." method="_on_reload_timer_timeout"]
