@@ -1,7 +1,11 @@
 extends Node2D
 
 var bullet_scene: PackedScene = preload("res://scenes/bullet.tscn")
+@onready var player := $entities/Player
+@onready var drone := $Drone
 
+func _process(delta: float) -> void:
+	drone.player_position = player.position
 
 func _on_player_shoot(player_position: Vector2, direction: Vector2) -> void:
 	print(player_position)
