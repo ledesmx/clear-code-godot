@@ -4,6 +4,42 @@
 [ext_resource type="Script" uid="uid://dofmv70egh0bd" path="res://scenes/entities/drone.gd" id="1_n87ok"]
 [ext_resource type="Texture2D" uid="uid://bav7n447bnsa5" path="res://graphics/fire/explosion.png" id="3_xcp44"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_xcp44"]
+atlas = ExtResource("1_gs6nb")
+region = Rect2(0, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0tq5o"]
+atlas = ExtResource("1_gs6nb")
+region = Rect2(32, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6vf5s"]
+atlas = ExtResource("1_gs6nb")
+region = Rect2(64, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_in55t"]
+atlas = ExtResource("1_gs6nb")
+region = Rect2(96, 0, 32, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0nv23"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xcp44")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0tq5o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6vf5s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_in55t")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_n87ok"]
 radius = 6.0
 
@@ -58,9 +94,10 @@ collision_layer = 4
 collision_mask = 8
 script = ExtResource("1_n87ok")
 
-[node name="BodySprite2D" type="Sprite2D" parent="." unique_id=1347006556]
-texture = ExtResource("1_gs6nb")
-hframes = 4
+[node name="BodySprite2D" type="AnimatedSprite2D" parent="." unique_id=1363125580]
+sprite_frames = SubResource("SpriteFrames_0nv23")
+autoplay = "default"
+frame_progress = 0.8218504
 
 [node name="ExplosionSprite2D" type="Sprite2D" parent="." unique_id=2062772369]
 visible = false
@@ -73,6 +110,7 @@ position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_n87ok")
 
 [node name="DetectPlayerArea2D" type="Area2D" parent="." unique_id=1368689586]
+visible = false
 collision_layer = 4
 collision_mask = 2
 
@@ -83,6 +121,7 @@ shape = SubResource("CircleShape2D_3aaxg")
 libraries/ = SubResource("AnimationLibrary_in55t")
 
 [node name="AttackArea2D" type="Area2D" parent="." unique_id=320898233]
+visible = false
 collision_layer = 4
 collision_mask = 2
 
