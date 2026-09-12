@@ -47,9 +47,12 @@ _data = {
 &"explosion_animation": SubResource("Animation_6vf5s")
 }
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_0nv23"]
+radius = 16.03122
+
 [node name="Drone" type="CharacterBody2D" unique_id=655975174]
 collision_layer = 4
-collision_mask = 0
+collision_mask = 8
 script = ExtResource("1_n87ok")
 
 [node name="BodySprite2D" type="Sprite2D" parent="." unique_id=1347006556]
@@ -66,15 +69,23 @@ hframes = 8
 position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_n87ok")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1368689586]
+[node name="DetectPlayerArea2D" type="Area2D" parent="." unique_id=1368689586]
 collision_layer = 4
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=873861703]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectPlayerArea2D" unique_id=873861703]
 shape = SubResource("CircleShape2D_3aaxg")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=492117747]
 libraries/ = SubResource("AnimationLibrary_in55t")
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[node name="AttackArea2D" type="Area2D" parent="." unique_id=320898233]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea2D" unique_id=1594055305]
+shape = SubResource("CircleShape2D_0nv23")
+
+[connection signal="body_entered" from="DetectPlayerArea2D" to="." method="_on_detect_player_area_2d_body_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="body_entered" from="AttackArea2D" to="." method="_on_attack_area_2d_body_entered"]
