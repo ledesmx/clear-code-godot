@@ -15,6 +15,7 @@ func _physics_process(delta: float) -> void:
 
 func play_explosion():
 	$BodySprite2D.visible = false
+	$CollisionShape2D.set_deferred("disabled", true)
 	$ExplosionSprite2D.visible = true
 	$AnimationPlayer.play("explosion_animation")
 
