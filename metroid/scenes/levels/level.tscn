@@ -2775,3 +2775,4 @@ texture = ExtResource("3_b2cq8")
 position = Vector2(417, 374)
 
 [connection signal="shoot" from="entities/Player" to="." method="_on_player_shoot"]
+[connection signal="explote" from="Drone" to="." method="_on_drone_explote"]

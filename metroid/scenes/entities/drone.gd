@@ -2,11 +2,15 @@ extends CharacterBody2D
 
 var attack_player := false
 var player_position := Vector2.ZERO
+var attack_direction := Vector2.ZERO
+
+signal explote(direction: Vector2)
 
 func _physics_process(delta: float) -> void:
 	if attack_player:
 		var total_velocity = sqrt((velocity.x ** 2) + (velocity.y ** 2))
-		velocity +=  (player_position - position).normalized() * 4
+		attack_direction =(player_position - position).normalized()
+		velocity +=  attack_direction * 4
 		velocity = velocity.limit_length(100)
 		move_and_slide()
 	if Input.is_action_just_pressed("explote"):
@@ -18,6 +22,8 @@ func play_explosion():
 	$CollisionShape2D.set_deferred("disabled", true)
 	$ExplosionSprite2D.visible = true
 	$AnimationPlayer.play("explosion_animation")
+	$AttackArea2D/CollisionShape2D.set_deferred("disabled", true)
+	explote.emit(attack_direction)
 
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:

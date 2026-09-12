@@ -17,3 +17,7 @@ func _on_player_shoot(player_position: Vector2, direction: Vector2) -> void:
 	bullet.direction = direction
 	add_child(bullet)
 	
+
+
+func _on_drone_explote(direction: Vector2) -> void:
+	player.explosion_direction = direction
