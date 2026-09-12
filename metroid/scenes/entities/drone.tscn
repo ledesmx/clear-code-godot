@@ -87,7 +87,7 @@ _data = {
 radius = 16.03122
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_okvjb"]
-radius = 4.0
+radius = 7.0
 
 [node name="Drone" type="CharacterBody2D" unique_id=655975174]
 collision_layer = 4
@@ -97,7 +97,7 @@ script = ExtResource("1_n87ok")
 [node name="BodySprite2D" type="AnimatedSprite2D" parent="." unique_id=1363125580]
 sprite_frames = SubResource("SpriteFrames_0nv23")
 autoplay = "default"
-frame_progress = 0.8218504
+frame_progress = 0.87102896
 
 [node name="ExplosionSprite2D" type="Sprite2D" parent="." unique_id=2062772369]
 visible = false
@@ -106,6 +106,7 @@ texture = ExtResource("3_xcp44")
 hframes = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2016540151]
+visible = false
 position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_n87ok")
 
@@ -133,8 +134,7 @@ collision_layer = 4
 collision_mask = 8
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="DetectBulletArea2D" unique_id=1297399436]
-visible = false
-position = Vector2(-6, -4)
+position = Vector2(-1, 0)
 shape = SubResource("CircleShape2D_okvjb")
 
 [node name="ImpactFeedbackTimer" type="Timer" parent="." unique_id=209944458]
