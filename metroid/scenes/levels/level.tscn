@@ -2774,5 +2774,23 @@ texture = ExtResource("3_b2cq8")
 [node name="Drone" parent="." unique_id=655975174 instance=ExtResource("6_d4w6o")]
 position = Vector2(417, 374)
 
+[node name="Drone2" parent="." unique_id=966145851 instance=ExtResource("6_d4w6o")]
+position = Vector2(544, 371)
+
+[node name="Drone3" parent="." unique_id=1068612156 instance=ExtResource("6_d4w6o")]
+position = Vector2(741, 351)
+
+[node name="Drone4" parent="." unique_id=179234780 instance=ExtResource("6_d4w6o")]
+position = Vector2(659, 350)
+
+[node name="Drone5" parent="." unique_id=2047335555 instance=ExtResource("6_d4w6o")]
+position = Vector2(697, 396)
+
+[node name="Drone6" parent="." unique_id=1463610064 instance=ExtResource("6_d4w6o")]
+position = Vector2(896, 388)
+
+[node name="Drone7" parent="." unique_id=1771449237 instance=ExtResource("6_d4w6o")]
+position = Vector2(1204, 403)
+
 [connection signal="shoot" from="entities/Player" to="." method="_on_player_shoot"]
 [connection signal="explote" from="Drone" to="." method="_on_drone_explote"]
