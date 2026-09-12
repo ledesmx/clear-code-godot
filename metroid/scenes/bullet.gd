@@ -1,7 +1,7 @@
 extends Node2D
 
 @export var direction := Vector2.RIGHT
-var speed = 100
+var speed = 400
 
 func _ready() -> void:
 	var tween = get_tree().create_tween()
