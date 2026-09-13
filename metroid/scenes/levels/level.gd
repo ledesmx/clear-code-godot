@@ -2,7 +2,8 @@ extends Node2D
 
 var bullet_scene: PackedScene = preload("res://scenes/bullet.tscn")
 @onready var player := $entities/Player
-@onready var drones := [$Drone,$Drone2,$Drone3,$Drone4,$Drone5,$Drone6,$Drone7]
+@onready var drones := get_tree().get_nodes_in_group("Drones")
+
 
 func _process(delta: float) -> void:
 	for drone in drones:
