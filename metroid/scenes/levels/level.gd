@@ -23,3 +23,21 @@ func _on_player_shoot(player_position: Vector2, direction: Vector2) -> void:
 
 func _on_drone_explote(direction: Vector2) -> void:
 	player.explosion_direction = direction
+
+func _on_drone_2_explote(direction: Vector2) -> void:
+	player.explosion_direction = direction
+
+func _on_drone_3_explote(direction: Vector2) -> void:
+	player.explosion_direction = direction
+
+func _on_drone_4_explote(direction: Vector2) -> void:
+	player.explosion_direction = direction
+
+func _on_drone_5_explote(direction: Vector2) -> void:
+	player.explosion_direction = direction
+
+func _on_drone_6_explote(direction: Vector2) -> void:
+	player.explosion_direction = direction
+
+func _on_drone_7_explote(direction: Vector2) -> void:
+	player.explosion_direction = direction

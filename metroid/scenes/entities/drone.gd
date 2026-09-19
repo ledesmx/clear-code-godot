@@ -4,7 +4,6 @@ var attack_player := false
 var player_position := Vector2.ZERO
 var attack_direction := Vector2.ZERO
 var life := 3
-var nearby_drones = {}
 
 signal explote(direction: Vector2)
 
@@ -41,16 +40,11 @@ func _on_attack_area_2d_body_entered(body: Node2D) -> void:
 	print(body.name)
 	if body.is_in_group("Drones"):
 		print(body.name)
-		nearby_drones[body.name] = body
 	else:
 		play_explosion()
 		$AttackArea2D/CollisionShape2D.set_deferred("disabled", true)
 		explote.emit(attack_direction)
 
-func _on_attack_area_2d_body_exited(body: Node2D) -> void:
-	if body.is_in_group("Drones"):
-		if nearby_drones.has(body.name):
-			nearby_drones.erase(body.name)
 
 func _on_detect_bullet_area_2d_area_entered(_area: Area2D) -> void:
 	life -= 1

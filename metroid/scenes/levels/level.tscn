@@ -2794,3 +2794,9 @@ position = Vector2(1204, 403)
 
 [connection signal="shoot" from="entities/Player" to="." method="_on_player_shoot"]
 [connection signal="explote" from="Drone" to="." method="_on_drone_explote"]
+[connection signal="explote" from="Drone2" to="." method="_on_drone_2_explote"]
+[connection signal="explote" from="Drone3" to="." method="_on_drone_3_explote"]
+[connection signal="explote" from="Drone4" to="." method="_on_drone_4_explote"]
+[connection signal="explote" from="Drone5" to="." method="_on_drone_5_explote"]
+[connection signal="explote" from="Drone6" to="." method="_on_drone_6_explote"]
+[connection signal="explote" from="Drone7" to="." method="_on_drone_7_explote"]
