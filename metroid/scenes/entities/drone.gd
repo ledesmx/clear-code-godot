@@ -34,9 +34,11 @@ func chain_reaction():
 
 
 func _on_detect_player_area_2d_body_entered(_body: Node2D) -> void:
+	follow_and_attack()
+
+func follow_and_attack():
 	attack_player = true
 	$PointLight2D.energy = 0.6
-	#print("Player detected")
 
 
 func _on_attack_area_2d_body_entered(body: Node2D) -> void:
@@ -56,6 +58,8 @@ func _on_detect_bullet_area_2d_area_entered(_area: Area2D) -> void:
 	else:
 		$BodySprite2D.self_modulate = Color.CRIMSON
 		$ImpactFeedbackTimer.start()
+		if life < 3:
+			follow_and_attack()
 
 
 func _on_impact_feedback_timer_timeout() -> void:
