@@ -35,6 +35,7 @@ func chain_reaction():
 
 func _on_detect_player_area_2d_body_entered(_body: Node2D) -> void:
 	attack_player = true
+	$PointLight2D.energy = 0.6
 	#print("Player detected")
 
 

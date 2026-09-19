@@ -159,7 +159,7 @@ wait_time = 0.101
 position = Vector2(-2.5, 1.5)
 scale = Vector2(0.035, 0.035)
 color = Color(0.99996513, 0.43748057, 0.42396736, 1)
-energy = 0.6
+energy = 0.3
 texture = ExtResource("4_0tq5o")
 
 [connection signal="body_entered" from="DetectPlayerArea2D" to="." method="_on_detect_player_area_2d_body_entered"]
