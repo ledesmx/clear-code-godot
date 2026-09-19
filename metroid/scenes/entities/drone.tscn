@@ -76,6 +76,20 @@ tracks/0/keys = {
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5, 6, 7]
 }
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"chain_reaction"
+}]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_in55t"]
 _data = {
@@ -91,13 +105,13 @@ radius = 7.0
 
 [node name="Drone" type="CharacterBody2D" unique_id=655975174 groups=["Drones"]]
 collision_layer = 4
-collision_mask = 8
+collision_mask = 4
 script = ExtResource("1_n87ok")
 
 [node name="BodySprite2D" type="AnimatedSprite2D" parent="." unique_id=1363125580]
 sprite_frames = SubResource("SpriteFrames_0nv23")
 autoplay = "default"
-frame_progress = 0.5432985
+frame_progress = 0.04455253
 
 [node name="ExplosionSprite2D" type="Sprite2D" parent="." unique_id=2062772369]
 visible = false
@@ -124,7 +138,7 @@ libraries/ = SubResource("AnimationLibrary_in55t")
 [node name="AttackArea2D" type="Area2D" parent="." unique_id=320898233]
 visible = false
 collision_layer = 4
-collision_mask = 2
+collision_mask = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea2D" unique_id=1594055305]
 shape = SubResource("CircleShape2D_0nv23")
@@ -141,7 +155,7 @@ shape = SubResource("CircleShape2D_okvjb")
 wait_time = 0.101
 
 [connection signal="body_entered" from="DetectPlayerArea2D" to="." method="_on_detect_player_area_2d_body_entered"]
-[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="body_entered" from="AttackArea2D" to="." method="_on_attack_area_2d_body_entered"]
+[connection signal="body_exited" from="AttackArea2D" to="." method="_on_attack_area_2d_body_exited"]
 [connection signal="area_entered" from="DetectBulletArea2D" to="." method="_on_detect_bullet_area_2d_area_entered"]
 [connection signal="timeout" from="ImpactFeedbackTimer" to="." method="_on_impact_feedback_timer_timeout"]
