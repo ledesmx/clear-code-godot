@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://c01jp7oecek4l" path="res://scenes/entities/player.gd" id="1_ucweq"]
 [ext_resource type="Texture2D" uid="uid://de5wf7al0hknv" path="res://graphics/characters/player.png" id="2_08t41"]
 [ext_resource type="Texture2D" uid="uid://otyoj5px7yk7" path="res://graphics/ui/crosshair.png" id="3_1ie0h"]
+[ext_resource type="Texture2D" uid="uid://dijla4pisrrw8" path="res://graphics/lights/main.png" id="4_42nxq"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0qees"]
 
@@ -118,6 +119,11 @@ autoplay = &"idle"
 [node name="CrosshairSprite2D" type="Sprite2D" parent="." unique_id=374818635]
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("3_1ie0h")
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1696069180]
+energy = 0.9
+texture = ExtResource("4_42nxq")
+texture_scale = 0.8
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="timeout" from="ReloadTimer" to="." method="_on_reload_timer_timeout"]

@@ -4,6 +4,15 @@ var bullet_scene: PackedScene = preload("res://scenes/bullet.tscn")
 @onready var player := $entities/Player
 @onready var drones := get_tree().get_nodes_in_group("Drones")
 
+func _ready() -> void:
+	var light_tween := create_tween()
+	light_tween.set_loops()
+	light_tween.tween_property($Ligths/PointLight2D4, "enabled", false, 0.0)
+	light_tween.tween_interval(2.5)
+	light_tween.tween_property($Ligths/PointLight2D4, "enabled", true, 0.0)
+	light_tween.tween_interval(.3)
+	
+	
 
 func _process(delta: float) -> void:
 	for drone in drones:

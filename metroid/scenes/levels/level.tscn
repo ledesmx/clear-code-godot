@@ -2,10 +2,11 @@
 
 [ext_resource type="PackedScene" uid="uid://hmqtw1hv0sk" path="res://scenes/entities/player.tscn" id="1_377w7"]
 [ext_resource type="Script" uid="uid://lgir5rmtx7l8" path="res://scenes/levels/level.gd" id="1_bovvr"]
-[ext_resource type="Texture2D" uid="uid://bxct7ew1p8677" path="res://icon.svg" id="3_b2cq8"]
 [ext_resource type="Texture2D" uid="uid://cgh7234wked4l" path="res://graphics/tilesets/walls.png" id="3_urvlt"]
 [ext_resource type="Texture2D" uid="uid://c7v0ifpdabs2i" path="res://graphics/tilesets/subway.png" id="4_xb4v1"]
 [ext_resource type="PackedScene" uid="uid://buootbivwwlpx" path="res://scenes/entities/drone.tscn" id="6_d4w6o"]
+[ext_resource type="Texture2D" uid="uid://6j2he24a4uda" path="res://graphics/lights/l3.png" id="6_mbbpy"]
+[ext_resource type="Texture2D" uid="uid://bo5lofshl02cv" path="res://graphics/lights/l0.png" id="7_ouxo3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d4w6o"]
 texture = ExtResource("4_xb4v1")
@@ -2765,38 +2766,66 @@ tile_set = SubResource("TileSet_rmjfq")
 [node name="Player" parent="entities" unique_id=1179682327 instance=ExtResource("1_377w7")]
 position = Vector2(82, 414)
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=847847244]
-visible = false
-position = Vector2(560, 723)
-scale = Vector2(8.703125, 3.90625)
-texture = ExtResource("3_b2cq8")
+[node name="Drone" parent="entities" unique_id=655975174 instance=ExtResource("6_d4w6o")]
+position = Vector2(414, 374)
 
-[node name="Drone" parent="." unique_id=655975174 instance=ExtResource("6_d4w6o")]
-position = Vector2(417, 374)
+[node name="Drone2" parent="entities" unique_id=966145851 instance=ExtResource("6_d4w6o")]
+position = Vector2(541, 371)
 
-[node name="Drone2" parent="." unique_id=966145851 instance=ExtResource("6_d4w6o")]
-position = Vector2(544, 371)
+[node name="Drone3" parent="entities" unique_id=1068612156 instance=ExtResource("6_d4w6o")]
+position = Vector2(738, 351)
 
-[node name="Drone3" parent="." unique_id=1068612156 instance=ExtResource("6_d4w6o")]
-position = Vector2(741, 351)
+[node name="Drone4" parent="entities" unique_id=179234780 instance=ExtResource("6_d4w6o")]
+position = Vector2(656, 350)
 
-[node name="Drone4" parent="." unique_id=179234780 instance=ExtResource("6_d4w6o")]
-position = Vector2(659, 350)
+[node name="Drone5" parent="entities" unique_id=2047335555 instance=ExtResource("6_d4w6o")]
+position = Vector2(694, 396)
 
-[node name="Drone5" parent="." unique_id=2047335555 instance=ExtResource("6_d4w6o")]
-position = Vector2(697, 396)
+[node name="Drone6" parent="entities" unique_id=1463610064 instance=ExtResource("6_d4w6o")]
+position = Vector2(893, 388)
 
-[node name="Drone6" parent="." unique_id=1463610064 instance=ExtResource("6_d4w6o")]
-position = Vector2(896, 388)
+[node name="Drone7" parent="entities" unique_id=1771449237 instance=ExtResource("6_d4w6o")]
+position = Vector2(1201, 403)
 
-[node name="Drone7" parent="." unique_id=1771449237 instance=ExtResource("6_d4w6o")]
-position = Vector2(1204, 403)
+[node name="Ligths" type="Node2D" parent="." unique_id=1706610040]
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="Ligths" unique_id=1862317211]
+color = Color(0.40069807, 0.40069756, 0.40069783, 1)
+blend_mode = 2
+
+[node name="PointLight2D" type="PointLight2D" parent="Ligths" unique_id=1790775566]
+position = Vector2(205, 425)
+texture = ExtResource("6_mbbpy")
+
+[node name="PointLight2D2" type="PointLight2D" parent="Ligths" unique_id=505892914]
+position = Vector2(1053, 424)
+texture = ExtResource("6_mbbpy")
+
+[node name="PointLight2D3" type="PointLight2D" parent="Ligths" unique_id=1490873710]
+position = Vector2(309, 385)
+scale = Vector2(0.27499986, 1)
+texture = ExtResource("7_ouxo3")
+
+[node name="PointLight2D4" type="PointLight2D" parent="Ligths" unique_id=96347027]
+position = Vector2(677.00006, 385)
+scale = Vector2(0.27499986, 1)
+texture = ExtResource("7_ouxo3")
+
+[node name="PointLight2D5" type="PointLight2D" parent="Ligths" unique_id=1126062421]
+position = Vector2(1014.00006, 369.00003)
+scale = Vector2(0.27499986, 1)
+texture = ExtResource("7_ouxo3")
+
+[node name="PointLight2D6" type="PointLight2D" parent="Ligths" unique_id=893968733]
+position = Vector2(829, 401)
+scale = Vector2(1.0000001, 1)
+texture = ExtResource("7_ouxo3")
 
 [connection signal="shoot" from="entities/Player" to="." method="_on_player_shoot"]
-[connection signal="explote" from="Drone" to="." method="_on_drone_explote"]
-[connection signal="explote" from="Drone2" to="." method="_on_drone_2_explote"]
-[connection signal="explote" from="Drone3" to="." method="_on_drone_3_explote"]
-[connection signal="explote" from="Drone4" to="." method="_on_drone_4_explote"]
-[connection signal="explote" from="Drone5" to="." method="_on_drone_5_explote"]
-[connection signal="explote" from="Drone6" to="." method="_on_drone_6_explote"]
-[connection signal="explote" from="Drone7" to="." method="_on_drone_7_explote"]
+[connection signal="explote" from="entities/Drone" to="." method="_on_drone_explote"]
+[connection signal="explote" from="entities/Drone2" to="." method="_on_drone_2_explote"]
+[connection signal="explote" from="entities/Drone3" to="." method="_on_drone_3_explote"]
+[connection signal="explote" from="entities/Drone4" to="." method="_on_drone_4_explote"]
+[connection signal="explote" from="entities/Drone5" to="." method="_on_drone_5_explote"]
+[connection signal="explote" from="entities/Drone6" to="." method="_on_drone_6_explote"]
+[connection signal="explote" from="entities/Drone7" to="." method="_on_drone_7_explote"]

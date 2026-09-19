@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://vyr0ks75oxum" path="res://graphics/characters/drone.png" id="1_gs6nb"]
 [ext_resource type="Script" uid="uid://dofmv70egh0bd" path="res://scenes/entities/drone.gd" id="1_n87ok"]
 [ext_resource type="Texture2D" uid="uid://bav7n447bnsa5" path="res://graphics/fire/explosion.png" id="3_xcp44"]
+[ext_resource type="Texture2D" uid="uid://dijla4pisrrw8" path="res://graphics/lights/main.png" id="4_0tq5o"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xcp44"]
 atlas = ExtResource("1_gs6nb")
@@ -153,6 +154,13 @@ shape = SubResource("CircleShape2D_okvjb")
 
 [node name="ImpactFeedbackTimer" type="Timer" parent="." unique_id=209944458]
 wait_time = 0.101
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1905428635]
+position = Vector2(-2.5, 1.5)
+scale = Vector2(0.035, 0.035)
+color = Color(0.99996513, 0.43748057, 0.42396736, 1)
+energy = 0.6
+texture = ExtResource("4_0tq5o")
 
 [connection signal="body_entered" from="DetectPlayerArea2D" to="." method="_on_detect_player_area_2d_body_entered"]
 [connection signal="body_entered" from="AttackArea2D" to="." method="_on_attack_area_2d_body_entered"]
