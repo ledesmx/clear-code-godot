@@ -4,6 +4,7 @@ var attack_player := false
 var player_position := Vector2.ZERO
 var attack_direction := Vector2.ZERO
 var life := 3
+var is_exploding := false
 
 signal explote(direction: Vector2)
 
@@ -19,6 +20,10 @@ func _physics_process(_delta: float) -> void:
 
 
 func play_explosion():
+	if is_exploding:
+		return
+	
+	is_exploding = true
 	$AttackArea2D.set_deferred("monitoring", false)
 	$PointLight2D.set_deferred("enabled", false)
 	$AnimatedSprite2D.visible = false
