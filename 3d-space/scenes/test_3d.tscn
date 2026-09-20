@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bkf4s4fbeg2h1"]
+
+[ext_resource type="Script" uid="uid://b62r3nftfldnb" path="res://scenes/test_3d.gd" id="1_sr87j"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0nv23"]
+albedo_color = Color(0.45882353, 0.74509805, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_3aaxg"]
+material = SubResource("StandardMaterial3D_0nv23")
+
+[node name="Test3D" type="Node3D" unique_id=525627392]
+script = ExtResource("1_sr87j")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=824469241]
+mesh = SubResource("BoxMesh_3aaxg")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=832347173]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.7382646)
