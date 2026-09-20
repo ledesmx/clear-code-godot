@@ -18,7 +18,7 @@ func _physics_process(_delta: float) -> void:
 func play_explosion():
 	$AttackArea2D.set_deferred("monitoring", false)
 	$PointLight2D.set_deferred("enabled", false)
-	$BodySprite2D.visible = false
+	$AnimatedSprite2D.visible = false
 	$CollisionShape2D.set_deferred("disabled", true)
 	$ExplosionSprite2D.visible = true
 	$AnimationPlayer.play("explosion_animation")
@@ -56,11 +56,11 @@ func _on_detect_bullet_area_2d_area_entered(_area: Area2D) -> void:
 	if life == 0:
 		play_explosion()
 	else:
-		$BodySprite2D.self_modulate = Color.CRIMSON
+		$AnimatedSprite2D.self_modulate = Color.CRIMSON
 		$ImpactFeedbackTimer.start()
 		if life < 3:
 			follow_and_attack()
 
 
 func _on_impact_feedback_timer_timeout() -> void:
-	$BodySprite2D.self_modulate = Color.WHITE
+	$AnimatedSprite2D.self_modulate = Color.WHITE
