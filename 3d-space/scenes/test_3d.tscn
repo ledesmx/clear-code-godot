@@ -15,10 +15,18 @@ sky = SubResource("Sky_psit6")
 glow_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0nv23"]
-albedo_color = Color(0.45882353, 0.74509805, 1, 1)
+transparency = 1
+albedo_color = Color(0.45882353, 0.74509805, 1, 0.76862746)
 
 [sub_resource type="BoxMesh" id="BoxMesh_3aaxg"]
 material = SubResource("StandardMaterial3D_0nv23")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sr87j"]
+albedo_color = Color(0.9079417, 0.9079417, 0.90794164, 1)
+metallic = 1.0
+
+[sub_resource type="TorusMesh" id="TorusMesh_3aaxg"]
+material = SubResource("StandardMaterial3D_sr87j")
 
 [node name="Test3D" type="Node3D" unique_id=525627392]
 script = ExtResource("1_sr87j")
@@ -35,3 +43,7 @@ mesh = SubResource("BoxMesh_3aaxg")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=832347173]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.7382646)
+
+[node name="DonutMeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1727771260]
+transform = Transform3D(1, 0, 0, 0, 0.4909023, -0.8712146, 0, 0.8712146, 0.4909023, -2.8325965, 0, -2)
+mesh = SubResource("TorusMesh_3aaxg")
