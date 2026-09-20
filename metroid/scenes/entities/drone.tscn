@@ -2,10 +2,14 @@
 
 [ext_resource type="Texture2D" uid="uid://vyr0ks75oxum" path="res://graphics/characters/drone.png" id="1_gs6nb"]
 [ext_resource type="Script" uid="uid://dofmv70egh0bd" path="res://scenes/entities/drone.gd" id="1_n87ok"]
+[ext_resource type="Shader" uid="uid://cgrxnfssacbjv" path="res://shaders/drone.tres" id="2_6vf5s"]
 [ext_resource type="Texture2D" uid="uid://bav7n447bnsa5" path="res://graphics/fire/explosion.png" id="3_xcp44"]
 [ext_resource type="Texture2D" uid="uid://dijla4pisrrw8" path="res://graphics/lights/main.png" id="4_0tq5o"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0tq5o"]
+shader = ExtResource("2_6vf5s")
+shader_parameter/Color = Color(1, 1, 1, 1)
+shader_parameter/Progress = 1.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xcp44"]
 atlas = ExtResource("1_gs6nb")
@@ -137,7 +141,7 @@ script = ExtResource("1_n87ok")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1363125580]
 material = SubResource("ShaderMaterial_0tq5o")
-position = Vector2(-1, 0)
+position = Vector2(-2, 0)
 sprite_frames = SubResource("SpriteFrames_0nv23")
 autoplay = "default"
 frame_progress = 0.04455253

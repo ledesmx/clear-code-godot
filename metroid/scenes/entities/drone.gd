@@ -7,6 +7,9 @@ var life := 3
 
 signal explote(direction: Vector2)
 
+func _ready() -> void:
+	$AnimatedSprite2D.material = $AnimatedSprite2D.material.duplicate()
+
 func _physics_process(_delta: float) -> void:
 	if attack_player:
 		attack_direction = (player_position - position).normalized()
@@ -56,11 +59,16 @@ func _on_detect_bullet_area_2d_area_entered(_area: Area2D) -> void:
 	if life == 0:
 		play_explosion()
 	else:
-		$AnimatedSprite2D.self_modulate = Color.CRIMSON
-		$ImpactFeedbackTimer.start()
+		#$AnimatedSprite2D.self_modulate = Color.CRIMSON
+		#$ImpactFeedbackTimer.start()
+		var tween = create_tween()
+		tween.tween_property($AnimatedSprite2D.material, "shader_parameter/Progress", 0.5, 0.0)
+		tween.tween_interval(0.1)
+		tween.tween_property($AnimatedSprite2D.material, "shader_parameter/Progress", 1, 0.0)
+		
 		if life < 3:
 			follow_and_attack()
 
 
-func _on_impact_feedback_timer_timeout() -> void:
-	$AnimatedSprite2D.self_modulate = Color.WHITE
+#func _on_impact_feedback_timer_timeout() -> void:
+	#$AnimatedSprite2D.self_modulate = Color.WHITE
