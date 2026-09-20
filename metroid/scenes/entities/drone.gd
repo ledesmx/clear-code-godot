@@ -25,7 +25,7 @@ func play_explosion():
 	$CollisionShape2D.set_deferred("disabled", true)
 	$ExplosionSprite2D.visible = true
 	$AnimationPlayer.play("explosion_animation")
-	
+	$ExplotionAudioStreamPlayer2D.play()
 	await $AnimationPlayer.animation_finished
 	queue_free()
 	
@@ -59,8 +59,6 @@ func _on_detect_bullet_area_2d_area_entered(_area: Area2D) -> void:
 	if life == 0:
 		play_explosion()
 	else:
-		#$AnimatedSprite2D.self_modulate = Color.CRIMSON
-		#$ImpactFeedbackTimer.start()
 		var tween = create_tween()
 		tween.tween_property($AnimatedSprite2D.material, "shader_parameter/Progress", 0.5, 0.0)
 		tween.tween_interval(0.1)
@@ -68,7 +66,3 @@ func _on_detect_bullet_area_2d_area_entered(_area: Area2D) -> void:
 		
 		if life < 3:
 			follow_and_attack()
-
-
-#func _on_impact_feedback_timer_timeout() -> void:
-	#$AnimatedSprite2D.self_modulate = Color.WHITE

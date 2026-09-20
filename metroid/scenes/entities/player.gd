@@ -18,6 +18,7 @@ func _process(delta: float) -> void:
 		if shoot_direction == Vector2.ZERO:
 			shoot_direction = Vector2.RIGHT
 		shoot.emit(position, shoot_direction)
+		$ShootAudioStreamPlayer2D.play()
 		is_reloading = true
 		$ReloadTimer.start()
 		var tween = get_tree().create_tween()
