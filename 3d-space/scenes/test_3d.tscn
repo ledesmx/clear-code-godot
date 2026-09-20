@@ -2,6 +2,18 @@
 
 [ext_resource type="Script" uid="uid://b62r3nftfldnb" path="res://scenes/test_3d.gd" id="1_sr87j"]
 
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_sr87j"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_psit6"]
+sky_material = SubResource("ProceduralSkyMaterial_sr87j")
+
+[sub_resource type="Environment" id="Environment_7yo4j"]
+background_mode = 2
+sky = SubResource("Sky_psit6")
+glow_enabled = true
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0nv23"]
 albedo_color = Color(0.45882353, 0.74509805, 1, 1)
 
@@ -10,6 +22,13 @@ material = SubResource("StandardMaterial3D_0nv23")
 
 [node name="Test3D" type="Node3D" unique_id=525627392]
 script = ExtResource("1_sr87j")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=285439670]
+environment = SubResource("Environment_7yo4j")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=896189490]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=824469241]
 mesh = SubResource("BoxMesh_3aaxg")
